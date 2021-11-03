@@ -1,0 +1,14 @@
+{
+  "name": "kore4nbotjs",
+  "version": "1.0.0",
+  "description": "General use discord bot for small communities",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.3.1"
+  }
+}
