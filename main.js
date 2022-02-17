@@ -12,10 +12,11 @@ client.events = new Discord.Collection();
 });
 
 // read token and login
-fs.readFile('token.txt', 'utf8' , (err, _token) => {
-  if (err) {
-    console.error(err);
-    return
-    }
-    client.login(_token);
-})
+// fs.readFile('token.txt', 'utf8' , (err, _token) => {
+//   if (err) {
+//     console.error(err);
+//     return
+//     }
+//     client.login(_token);
+// })
+client.login(process.env.TOKEN);
