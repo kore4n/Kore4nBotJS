@@ -65,8 +65,7 @@ module.exports = {
                     // const connection = await voice_channel.join();
                     const connection = joinVoiceChannel({
                         channelId: voice_channel.id,
-                        guildId: voice_channel.guildId,
-                        
+                        guildId: voice_channel.guild.id
                     })
 
                     queue_constructor.connection = connection;
