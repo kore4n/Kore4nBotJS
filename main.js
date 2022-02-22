@@ -13,8 +13,13 @@ const player = new Player(client);
 player.on("trackStart", (queue, track) => queue.metadata.channel.send(`🎶 | Now playing **${track.title}**!`));
 
 client.on("interactionCreate", async (interaction) => {
-    if (!interaction.isCommand()) return;
-
+    // if (!interaction.isCommand()) return;
+    const prefix = process.env.prefix;
+    if (!message.content.startsWith(prefix) || message.author.bot)
+    {
+        return;
+    }
+    interaction.send("Interaction received")
     // /play track:Despacito
     // will play "Despacito" in the voice channel
     if (interaction.commandName === "playy") {
