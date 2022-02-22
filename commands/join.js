@@ -11,9 +11,9 @@ module.exports = {
 
         if (cmd === 'join' || cmd === "j"){
             const connection = joinVoiceChannel({
-                channelId: voice_channel.id,
-                guildId: voice_channel.guild.id,
-                adapterCreator: voice_channel.guild.voiceAdapterCreator,
+                channelId: message.member.voice.channelId,
+                guildId: message.guild.id,
+                adapterCreator: message.guild.voiceAdapterCreator,
             })
             message.channel.send("Kore4n Bot has joined the voice channel!")
         }
