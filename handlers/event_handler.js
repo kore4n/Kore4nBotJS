@@ -1,7 +1,6 @@
 require('dotenv').config();
 const { Interaction } = require('discord.js');
 const fs = require('fs');
-const interactionCreate = require('../events/guild/interactionCreate');
 
 module.exports = (client, Discord) => {
     const prefix = process.env.prefix;
