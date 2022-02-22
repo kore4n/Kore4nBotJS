@@ -11,12 +11,7 @@ module.exports = (client, Discord) => {
             const event = require(`../events/${dirs}/${file}`);
             const event_name = file.split(prefix)[0];   // i.e. ready, message
 
-            if (event_name != "interactionCreate"){
-                client.on(event_name, event.bind(null, Discord, client))
-            }
-            // else{
-            //     client.on("interactionCreate", event.bind(Interaction))
-            // }
+            client.on(event_name, event.bind(null, Discord, client))
         }
     }
 
