@@ -1,3 +1,3 @@
 module.exports = () => {
-    console.log('bot is online')
+    console.log('Kore4n Bot is Online!')
 }
