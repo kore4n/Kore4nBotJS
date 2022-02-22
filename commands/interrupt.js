@@ -2,9 +2,9 @@ const { getVoiceConnection } = require("@discordjs/voice")
 const { joinVoiceChannel } = require("@discordjs/voice")
 
 module.exports = {
-    name: 'join',
-    aliases: ['j', 'l', 'leave', 'dc'],
-    description: "Join/leave the user's current discord channel.",
+    name: 'interrupt',
+    aliases: ['i', 'annoy'],
+    description: "Interrupts everyone in the current voice channel by joining and leaving",
     execute(message, client, cmd){
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send('You need to be in a voice channel to execute this command!');
