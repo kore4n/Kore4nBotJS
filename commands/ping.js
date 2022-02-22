@@ -3,6 +3,6 @@ module.exports = {
     aliases: ['ping me', 'p'],
     description: "this is a ping command!",
     execute(message, args, cmd, client, Discord){
-        message.channel.send("pong!");
+        message.channel.send("Pong!");
     }
 }
