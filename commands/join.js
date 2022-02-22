@@ -24,9 +24,5 @@ module.exports = {
             connection.destroy()
             message.channel.send("Kore4n Bot has left the voice channel!")
         }
-
-        message.channel.send("Command registered")
-        console.log(cmd)
-        message.channel.send(cmd)
     }
 }

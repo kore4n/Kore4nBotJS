@@ -1,6 +1,7 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
 const dVoice = require('discord.js');
+const { getVoiceConnection } = require("@discordjs/voice");
 const { joinVoiceChannel } = require('@discordjs/voice');
 
 //Global queue for your bot. Every server will have a key and value pair in this map. { guild.id, queue_constructor{} }
@@ -61,11 +62,12 @@ module.exports = {
     
                 //Establish a connection and play the song with the vide_player function.
                 try {
-                    // const connection = await voice_channel.join();
                     const connection = joinVoiceChannel({
-                        channelId: voice_channel.id,
-                        guildId: voice_channel.guild.id
+                        channelId: message.member.voice.channelId,
+                        guildId: message.guild.id,
+                        adapterCreator: message.guild.voiceAdapterCreator,
                     })
+                    message.channel.send("Kore4n Bot has joined the voice channel!")
 
                     queue_constructor.connection = connection;
                     video_player(message.guild, queue_constructor.songs[0]);
@@ -91,7 +93,7 @@ const video_player = async (guild, song) => {
 
     //If no song is left in the server queue. Leave the voice channel and delete the key and value pair from the global queue.
     if (!song) {
-        song_queue.voice_channel.leave();
+        song_queue.voice_channel.leave();   // maybe update this
         queue.delete(guild.id);
         return;
     }
