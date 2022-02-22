@@ -1,4 +1,5 @@
 const { getVoiceConnection } = require("@discordjs/voice")
+const { joinVoiceChannel } = require("@discordjs/voice")
 
 module.exports = {
     name: 'join',
