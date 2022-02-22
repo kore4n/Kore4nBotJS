@@ -5,8 +5,6 @@ module.exports = {
     aliases: ['j', 'l', 'leave'],
     description: "sends the youtube link!",
     execute(message, args, cmd){
-        if (!args.length) return message.channel.send('You need to send the second argument!');
-
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send('You need to be in a voice channel to execute this command!');
         if (!voice_channel.joinable) return message.channel.send('I need permission to join your voice channel!')
