@@ -1,5 +1,4 @@
 require('dotenv').config();
-const { Interaction } = require('discord.js');
 const fs = require('fs');
 
 module.exports = (client, Discord) => {
