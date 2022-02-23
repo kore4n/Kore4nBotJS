@@ -14,15 +14,16 @@ module.exports = {
             return
         }
 
-        const num = parseInt(args[0])
-        if (isNaN(num)){
-            return message.channel.send("First argument must be a number")
-        }
-        else{
-            for (let i = 0; i < num; i++){
-                inOut()
-            }
-        }
+        // running 3+ times crashes the bot, maybe add in a delay or something
+        // const num = parseInt(args[0])
+        // if (isNaN(num)){
+        //     return message.channel.send("First argument must be a number")
+        // }
+        // else{
+        //     for (let i = 0; i < num; i++){
+        //         inOut()
+        //     }
+        // }
 
         function inOut(){
             message.delete()    // delete original command
