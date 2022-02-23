@@ -47,12 +47,12 @@ module.exports = {
             metadata: message.channel
         });
 
-        try {
-            if (!queue.connection) await queue.connect(message.member.voice.channel);
-        } catch {
-            await player.deleteQueue(message.guild.id);
-            return message.channel.send(`I can't join the voice channel ${message.author}... try again ? ❌`);
-        }
+        // try {
+        //     if (!queue.connection) await queue.connect(message.member.voice.channel);
+        // } catch {
+        //     await player.deleteQueue(message.guild.id);
+        //     return message.channel.send(`I can't join the voice channel ${message.author}... try again ? ❌`);
+        // }
 
         await message.channel.send(`Loading your ${res.playlist ? 'playlist' : 'track'}... 🎧`);
 

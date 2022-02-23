@@ -11,6 +11,7 @@ module.exports = {
 
         if (!args.length){
             inOut()
+            return
         }
 
         const num = parseInt(args[0])
